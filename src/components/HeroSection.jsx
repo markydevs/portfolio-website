@@ -6,22 +6,23 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
 	return (
-		<section>
-			<div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-				<div className="col-span-12 md:col-span-7 place-self-center text-center md:text-left">
-					<h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
-							Hello, I'm{" "}
+		<section className="lg:py-16">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+				<div className="text-center md:text-left">
+					<h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-tight font-extrabold">
+						<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+							Hello, I&apos;m{" "}
 						</span>
+						<br />
 						<TypeAnimation
 							sequence={[
 								"Mark",
 								1000,
-								"A Web Developer",
+								"Web Developer",
 								1000,
-								"A Mobile Developer",
+								"Mobile Developer",
 								1000,
-								"A UI/UX Designer",
+								"UI/UX Designer",
 								1000,
 							]}
 							wrapper="span"
@@ -30,22 +31,23 @@ const HeroSection = () => {
 						/>
 					</h1>
 					<p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-						quasi.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+						voluptuous.
 					</p>
 					<div>
-						<button className="px-6 py-3 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-blue-600 via-purple-500 to-pink-400 hover:bg-slate-200 text-white">
+						<button className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-600 via-purple-500 to-pink-400 text-white hover:bg-slate-200">
 							Let's Connect
 						</button>
-						<button className="px-1 py-1 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 w-full sm:w-fit hover:bg-slate-800 text-white mt-3">
-							<span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+						<button className="px-1 py-1 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 w-full sm:w-fit text-white mt-3">
+							<span className="block bg-[#121212] rounded-full px-5 py-2 hover:bg-slate-800">
 								See my work
 							</span>
 						</button>
 					</div>
 				</div>
-				<div className="col-span-12 md:col-span-5 place-self-center mt-6 lg:mt-0">
-					<div className="rounded-full bg-[#181818] w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] relative mx-auto">
+
+				<div className="flex justify-center md:justify-end">
+					<div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
 						<Image
 							src={heroImage}
 							alt="coding-w/hustle"
