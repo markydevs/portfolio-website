@@ -23,7 +23,10 @@ const TAB_DATA = [
 		id: "education",
 		content: (
 			<ul>
-				<li>The Ohio State University, College of Engineering</li>
+				<li>
+					The Ohio State University, College of Engineering – B.S. in Computer
+					Science and Engineering
+				</li>
 			</ul>
 		),
 	},
@@ -40,18 +43,19 @@ const AboutSection = () => {
 	};
 
 	return (
-		<section className="text-white">
+		<section id="about" className="text-white">
 			<div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl-gap-16 sm:py-16 xl:px-16">
 				<Image src={aboutImage} width={500} height={500} />
 				<div className="mt-4 md:mt-0 text-left flex flex-col h-full">
 					<h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
 					<p className="text-base lg:text-lg ">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-						explicabo rem facere eius officiis impedit inventore modi amet
-						nostrum ducimus! Aliquam, ipsa. Doloremque tempora odio amet labore
-						autem ipsum aliquam! Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Provident voluptatibus reiciendis blanditiis
-						dignissimos adipisci molestiae illum illo harum minima sed.
+						I'm a dedicated full-stack web developer focused on building
+						seamless and responsive applications. With a foundation in
+						JavaScript, React, Firebase, Python, Java, Node.js, HTML, and CSS, I
+						bring versatility to each project. I’m driven by a continuous
+						pursuit of learning and improving my skills, and I thrive in
+						collaborative environments where I can contribute to meaningful,
+						user-focused applications.
 					</p>
 					<div className="flex flex-row justify-start mt-8">
 						<TabButton

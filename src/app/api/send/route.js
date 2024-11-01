@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+const fromEmail = "Acme <onboarding@resend.dev>";
 
 export async function POST(req, res) {
 	const { email, subject, message } = await req.json();
@@ -10,10 +10,11 @@ export async function POST(req, res) {
 	try {
 		const data = await resend.emails.send({
 			from: fromEmail,
-			to: [fromEmail, email],
+			to: ["metalnight24@hotmail.com"],
 			subject: subject,
 			react: (
 				<>
+					<h3>{email}</h3>
 					<h1>{subject}</h1>
 					<p>Thank you for contacting us!</p>
 					<p>New message submitted:</p>

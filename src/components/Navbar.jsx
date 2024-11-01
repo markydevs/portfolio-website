@@ -22,9 +22,7 @@ export const Navbar = () => {
 					<Image
 						src={logoImage}
 						alt="coding-w/hustle"
-						width={100}
-						height={100}
-						className="text-2xl md:text-5xl text-white font-semibold"
+						className="w-16 h-16 md:w-25 md:h-20 lg:w-30 lg:h-20"
 					/>
 				</Link>
 				<div className="mobile-menu block md:hidden">

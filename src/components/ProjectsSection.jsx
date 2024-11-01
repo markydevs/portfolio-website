@@ -1,60 +1,34 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 const projectsData = [
 	{
 		id: 1,
-		title: "React Portfolio Website",
+		title: "Nonprofit Website",
 		description: "Project 1 description",
 		image: "/projects/1.png",
 		tag: ["All", "Web"],
-		gitUrl: "/",
-		previewUrl: "/",
+		gitUrl: "https://github.com/markydevs/nonprofit-site",
+		previewUrl: "https://markydevs.github.io/nonprofit-site/index.html",
 	},
 	{
 		id: 2,
-		title: "Photography Portfolio Website",
+		title: "Hangman Web App",
 		description: "Project 2 description",
 		image: "/projects/2.png",
 		tag: ["All", "Web"],
-		gitUrl: "/",
-		previewUrl: "/",
+		gitUrl: "https://github.com/markydevs/hang_man",
+		previewUrl: "https://markydevs.github.io/hang_man/",
 	},
 	{
 		id: 3,
-		title: "E-commerce Application",
+		title: "Firebase App (Coming Soon)",
 		description: "Project 3 description",
 		image: "/projects/3.png",
-		tag: ["All", "Web"],
-		gitUrl: "/",
-		previewUrl: "/",
-	},
-	{
-		id: 4,
-		title: "Food Ordering Application",
-		description: "Project 4 description",
-		image: "projects/4.png",
-		tag: ["All", "Mobile"],
-		gitUrl: "/",
-		previewUrl: "/",
-	},
-	{
-		id: 5,
-		title: "React Firebase Template",
-		description: "Authentication and CRUD operations",
-		image: "projects/5.png",
-		tag: ["All", "Web"],
-		gitUrl: "/",
-		previewUrl: "/",
-	},
-	{
-		id: 6,
-		title: "Full-stack Roadmap",
-		description: "Project 5 description",
-		image: "projects/6.png",
-		tag: ["All", "Web"],
+		tag: ["All", "Full-Stack"],
 		gitUrl: "/",
 		previewUrl: "/",
 	},
@@ -62,6 +36,8 @@ const projectsData = [
 
 const ProjectsSection = () => {
 	const [tag, setTag] = useState("All");
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
 
 	const handleTagChange = (newTag) => {
 		setTag(newTag);
@@ -70,6 +46,11 @@ const ProjectsSection = () => {
 	const filteredProjects = projectsData.filter((project) =>
 		project.tag.includes(tag)
 	);
+
+	const cardVariants = {
+		initial: { y: 50, opacity: 0 },
+		animate: { y: 0, opacity: 1 },
+	};
 
 	return (
 		<section id="projects">
@@ -89,23 +70,30 @@ const ProjectsSection = () => {
 				/>
 				<ProjectTag
 					onClick={handleTagChange}
-					name="Mobile"
-					isSelected={tag === "Mobile"}
+					name="Full-Stack"
+					isSelected={tag === "Full-Stack"}
 				/>
 			</div>
-			<div className="grid md:grid-cols-3 gap-8 md:gap-12">
-				{filteredProjects.map((project) => (
-					<ProjectCard
-						key={project.id}
-						title={project.title}
-						decsription={project.description}
-						imgUrl={project.image}
-						tags={project}
-						gitUrl={project.gitUrl}
-						previewUrl={project.previewUrl}
-					/>
+			<ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+				{filteredProjects.map((project, index) => (
+					<motion.li
+						key={index}
+						variants={cardVariants}
+						initial="initial"
+						animate={isInView ? "animate" : "initial"}
+						transition={{ duration: 0.3, delay: index * 0.3 }}>
+						<ProjectCard
+							key={project.id}
+							title={project.title}
+							decsription={project.description}
+							imgUrl={project.image}
+							tags={project}
+							gitUrl={project.gitUrl}
+							previewUrl={project.previewUrl}
+						/>
+					</motion.li>
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };
