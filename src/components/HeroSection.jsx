@@ -44,7 +44,7 @@ const HeroSection = () => {
 						<Link
 							href="/#contact"
 							className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 hover:bg-slate-200 text-white">
-							Let's Connect
+							Let&apos;s Connect
 						</Link>
 						<Link
 							href="/#projects"
