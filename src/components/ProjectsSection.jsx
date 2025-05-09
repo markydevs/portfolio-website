@@ -25,12 +25,12 @@ const projectsData = [
 	},
 	{
 		id: 3,
-		title: "Firebase App (Coming Soon)",
+		title: "Rhino Type (Monkey Type Clone)",
 		description: "Project 3 description",
 		image: "/projects/3.png",
-		tag: ["All", "Full-Stack"],
-		gitUrl: "/",
-		previewUrl: "/",
+		tag: ["All", "Full-Stack", "Web"],
+		gitUrl: "https://github.com/markydevs/rhino-type",
+		previewUrl: "https://markydevs.github.io/rhino-type/",
 	},
 ];
 
