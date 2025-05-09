@@ -24,7 +24,7 @@ const TAB_DATA = [
 		content: (
 			<ul>
 				<li>
-					In State University's College of Engineering – B.S. in Computer
+					In State University&apos;s College of Engineering – B.S. in Computer
 					Science and Engineering
 				</li>
 			</ul>
